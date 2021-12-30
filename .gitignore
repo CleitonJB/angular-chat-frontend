@@ -1,1 +1,6 @@
-.angular/cache
+# dependencies
+/node_modules
+/package-lock.json
+
+# Angular cache
+/.angular/cache
