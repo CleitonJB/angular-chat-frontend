@@ -3,7 +3,7 @@ ion-content {
   min-height: 85%;
   max-height: 85%;
 
-  --background: repeat-y center/100% 100% url('../../assets/chat-background-1.png');
+  --background: repeat center/100% 100% url('../../assets/chat-background-1.png');
 }
 
 #content {
@@ -12,30 +12,38 @@ ion-content {
   display: flex;
   flex-direction: column;
 
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .message {
   width: 100%;
 }
+.message:not(.message:nth-child(1)):not(.message:last-of-type) {
+  margin-top: 0.55rem;
+}
 
 .message__content--left {
   float: left;
+
+  background-color: rgb(192, 255, 208);
+  border-radius: 8px 8px 8px 0px;
 }
 
 .message__content--right {
   float: right;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px 8px 0px 8px;
 }
 
 .message__content--left, .message__content--right {
   width: fit-content;
   min-width: 45%;
-  max-width: 100%;
+  max-width: 80%;
 
   padding: 0.25rem 0.4rem;
 
-  background-color: rgb(192, 255, 208);
-  border-radius: 6px 6px 6px 0px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
 
   span.message__title, p.message__text {
     padding: 0;
@@ -43,51 +51,20 @@ ion-content {
   }
 
   span.message__title {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.05rem, 1.1rem);
     font-weight: 800;
 
     white-space: nowrap;
   }
 
   p.message__text {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.05rem, 1.2rem);
+
+    margin-top: 0.2rem;
 
     white-space: normal;
   }
 }
-.message:not(.message:nth-child(1)) {
-  margin-top: 0.55rem;
-}
-
-//!
-
-.msg-box {
-  width: 100%;
-  height: calc(100% - 140px); 
-  margin-top: 20px;
-  border: 2px solid #191D32;
-  border-radius: .5em;
-  padding: 10px 30px;
-  font-size: 14px;
-
-  overflow: auto;
-
-  ul {
-      list-style: none;
-
-      .ex-msg {
-          margin-bottom: 10px;
-          color: #459c1a;
-
-          text-align: left;
-      }
-
-      .in-msg {
-          margin-bottom: 10px;
-          color: #DD1155;
-
-          text-align: right;
-      }
-  }
-  
+.message__content--left:last-of-type, .message__content--right:last-of-type {
+  margin-bottom: 0.5rem;
 }
