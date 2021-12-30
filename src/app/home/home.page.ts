@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from '../services/chat.service';
+
 import { MessageDto } from '../Dto/MessageDto';
+
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-home',
@@ -8,58 +10,6 @@ import { MessageDto } from '../Dto/MessageDto';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
-  mensagens = [
-    {
-      id:        1,
-      from: {
-        id:   1,
-        name: 'CT',
-      },
-      to: {
-        id:   2,
-        name: 'TR',
-      },
-      message:   "I'm at B"
-    },
-    {
-      id:        2,
-      from: {
-        id:   2,
-        name: 'TR',
-      },
-      to: {
-        id:   1,
-        name: 'CT',
-      },
-      message:   "Negative!"
-    },
-    {
-      id:        3,
-      from: {
-        id:   1,
-        name: 'CT',
-      },
-      to: {
-        id:   2,
-        name: 'TR',
-      },
-      message:   "Knife mid?"
-    },
-    {
-      id:        4,
-      from: {
-        id:   2,
-        name: 'TR',
-      },
-      to: {
-        id:   1,
-        name: 'CT',
-      },
-      message:   'Roger that!'
-    },
-  ];
-
   msgDto: MessageDto = new MessageDto();
   msgInboxArray: MessageDto[] = [];
 
